@@ -8,31 +8,31 @@ const SHIPPING_FEE = 100;            // otherwise this flat fee
 const PROMO_CODES = { SAVE10: 0.10 }; // code -> discount rate
 
 // ---- Product data (single source of truth for every page) ----
-// To use a real photo later: put the file in /images and change `image`.
+
 const products = [
-    {id: 1,  name: 'Professional Blender', price: 8999,  category: 'kitchen',       image: 'images/blender.jpeg',   rating: 4.5, desc: '1000W motor with 6 speed settings',
+    {id: 1,  name: 'Professional Blender', price: 8999,  category: 'kitchen',       image: 'blender.jpeg',   rating: 4.5, desc: '1000W motor with 6 speed settings',
      features: ['1000W powerful motor', '6 speed settings', 'Large BPA-free pitcher', 'Easy-clean parts']},
-    {id: 2,  name: 'Standing Fan',         price: 5999,  category: 'cooling',       image: 'images/fan.jpeg',       rating: 4.0, desc: '3 speed settings with oscillation',
+    {id: 2,  name: 'Standing Fan',         price: 5999,  category: 'cooling',       image: 'fan.jpeg',       rating: 4.0, desc: '3 speed settings with oscillation',
      features: ['3 speed settings', 'Oscillation', 'Adjustable height', 'Stable round base']},
-    {id: 3,  name: 'Water Dispenser',      price: 12999, category: 'kitchen',       image: 'images/dispenser.jpeg',  rating: 5.0, desc: 'Hot and cold water with child lock',
+    {id: 3,  name: 'Water Dispenser',      price: 12999, category: 'kitchen',       image: 'dispenser.jpeg',  rating: 5.0, desc: 'Hot and cold water with child lock',
      features: ['Hot and cold water', 'Child safety lock', 'Compact design']},
-    {id: 4,  name: 'Microwave Oven',       price: 19999, category: 'kitchen',       image: 'images/microwave.jpeg', rating: 4.3, desc: '900W with 10 power levels',
+    {id: 4,  name: 'Microwave Oven',       price: 19999, category: 'kitchen',       image: 'microwave.jpeg', rating: 4.3, desc: '900W with 10 power levels',
      features: ['900W power', '10 power levels', 'Digital display', 'Dial control']},
-    {id: 5,  name: 'Vacuum Cleaner',       price: 29999, category: 'cleaning',      image: 'images/vacuum.jpeg',    rating: 4.2, desc: 'Bagless with HEPA filter',
+    {id: 5,  name: 'Vacuum Cleaner',       price: 29999, category: 'cleaning',      image: 'vacuum.jpeg',    rating: 4.2, desc: 'Bagless with HEPA filter',
      features: ['HEPA filtration', 'Bagless design', 'Rotary power dial', 'Floor and crevice nozzles']},
-    {id: 6,  name: 'Air Fryer',            price: 44999, category: 'kitchen',       image: 'images/fryer.jpeg',     rating: 4.6, desc: '5.3QT capacity with digital controls',
+    {id: 6,  name: 'Air Fryer',            price: 44999, category: 'kitchen',       image: 'fryer.jpeg',     rating: 4.6, desc: '5.3QT capacity with digital controls',
      features: ['5.3QT capacity', 'Digital touch controls', 'Preset cooking modes', 'Temperature display']},
-    {id: 7,  name: 'Air Conditioner',      price: 89999, category: 'cooling',       image: 'images/ac.svg',         rating: 4.4, desc: '12000 BTU with remote control',
+    {id: 7,  name: 'Air Conditioner',      price: 89999, category: 'cooling',       image: 'ac.svg',         rating: 4.4, desc: '12000 BTU with remote control',
      features: ['12000 BTU cooling', 'Remote control', 'Sleep mode']},
-    {id: 8,  name: 'Washing Machine',      price: 59999, category: 'cleaning',      image: 'images/washer.jpeg',    rating: 4.7, desc: '8kg capacity with 15 programs',
+    {id: 8,  name: 'Washing Machine',      price: 59999, category: 'cleaning',      image: 'washer.jpeg',    rating: 4.7, desc: '8kg capacity with 15 programs',
      features: ['8kg capacity', '15 wash programs', 'Touch control panel', 'Front-loading']},
-    {id: 9,  name: 'Smart TV',             price: 79999, category: 'entertainment', image: 'images/tv.svg',         rating: 4.8, desc: '55" 4K UHD with built-in apps',
+    {id: 9,  name: 'Smart TV',             price: 79999, category: 'entertainment', image: 'tv.svg',         rating: 4.8, desc: '55" 4K UHD with built-in apps',
      features: ['55" 4K UHD screen', 'Built-in apps', 'Wi-Fi connectivity']},
-    {id: 10, name: 'Coffee Maker',         price: 34999, category: 'kitchen',       image: 'images/coffee.svg',     rating: 4.1, desc: '12-cup programmable with timer',
+    {id: 10, name: 'Coffee Maker',         price: 34999, category: 'kitchen',       image: 'coffee.svg',     rating: 4.1, desc: '12-cup programmable with timer',
      features: ['12-cup capacity', 'Programmable timer', 'Keep-warm function']},
-    {id: 11, name: 'Steam Mop',            price: 17999, category: 'cleaning',      image: 'images/mop.svg',        rating: 4.5, desc: 'Chemical-free cleaning with 15 steam jets',
+    {id: 11, name: 'Steam Mop',            price: 17999, category: 'cleaning',      image: 'mop.svg',        rating: 4.5, desc: 'Chemical-free cleaning with 15 steam jets',
      features: ['Chemical-free cleaning', '15 steam jets', 'Lightweight design']},
-    {id: 12, name: 'Sound System',         price: 24999, category: 'entertainment', image: 'images/speaker.svg',    rating: 4.3, desc: 'Bluetooth speaker with bass boost',
+    {id: 12, name: 'Sound System',         price: 24999, category: 'entertainment', image: 'speaker.svg',    rating: 4.3, desc: 'Bluetooth speaker with bass boost',
      features: ['Bluetooth connectivity', 'Bass boost', 'Portable design']}
 ];
 
