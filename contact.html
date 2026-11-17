@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - ShopHop</title>
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-theme">
+    <header>
+        <div class="header-top">
+            <div class="logo-container">
+                <a href="index.html" aria-label="ShopHop home"><img src="images/logo.png" alt="ShopHop" class="logo-img"></a>
+            </div>
+            <div class="header-actions">
+                <button class="theme-toggle-btn" onclick="switchTheme()">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                    <span id="theme-text">Dark Mode</span>
+                </button>
+                <a class="cart-icon-container" href="cart.html" aria-label="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html" class="nav-active" aria-current="page">Contact</a></li><li><a href="profile.html">Profile</a></li><li><a href="cart.html">Cart</a></li></ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Contact Us</h1>
+            <p>Questions about an order or a product? Send us a message.</p>
+        </section>
+
+        <section class="contact-grid">
+            <form class="form-card" id="contact-form" onsubmit="validateContactForm(event)" novalidate>
+                <h2>Send a message</h2>
+                <div class="form-group"><label for="contact-name">Name</label><input type="text" id="contact-name"><span class="error-msg" id="contact-name-error"></span></div>
+                <div class="form-group"><label for="contact-email">Email</label><input type="email" id="contact-email"><span class="error-msg" id="contact-email-error"></span></div>
+                <div class="form-group">
+                    <label for="contact-subject">Subject</label>
+                    <select id="contact-subject">
+                        <option value="">Select a subject</option>
+                        <option value="order">My order</option>
+                        <option value="product">Product question</option>
+                        <option value="return">Returns</option>
+                        <option value="other">Something else</option>
+                    </select>
+                    <span class="error-msg" id="contact-subject-error"></span>
+                </div>
+                <div class="form-group"><label for="contact-message">Message</label><textarea id="contact-message" rows="5"></textarea><span class="error-msg" id="contact-message-error"></span></div>
+                <button type="submit" class="btn-primary">Send message</button>
+                <button type="button" class="btn-secondary" onclick="resetContactForm()">Clear</button>
+                <div class="success-message" id="contact-success">Message sent. We'll get back to you soon.</div>
+            </form>
+
+            <div>
+                <div class="contact-card"><h3><i class="fas fa-envelope"></i> Email</h3><p>info@shophop.com</p></div>
+                <div class="contact-card"><h3><i class="fas fa-map-marker-alt"></i> Location</h3><p>Cairo, Egypt</p></div>
+                <h2 class="mb-20">FAQ</h2>
+                <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(1)">How long does delivery take?<i class="fas fa-chevron-down" id="faq-icon-1"></i></button><div class="faq-answer" id="faq-answer-1">Most orders arrive within a few working days, depending on your city.</div></div><div class="faq-item"><button class="faq-question" onclick="toggleFAQ(2)">Can I return a product?<i class="fas fa-chevron-down" id="faq-icon-2"></i></button><div class="faq-answer" id="faq-answer-2">Yes. Unused items in their original packaging can be returned.</div></div><div class="faq-item"><button class="faq-question" onclick="toggleFAQ(3)">Do your products come with a warranty?<i class="fas fa-chevron-down" id="faq-icon-3"></i></button><div class="faq-answer" id="faq-answer-3">Yes, warranty details are listed with each product.</div></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ShopHop</h3>
+                <p>Your fast &amp; fun shopping destination for home appliances.</p>
+                <div class="social-icons">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="profile.html">My Account</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-envelope"></i> info@shophop.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShopHop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

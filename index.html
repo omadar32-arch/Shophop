@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHop - Home Appliances Store</title>
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-theme">
+    <header>
+        <div class="header-top">
+            <div class="logo-container">
+                <a href="index.html" aria-label="ShopHop home"><img src="images/logo.png" alt="ShopHop" class="logo-img"></a>
+            </div>
+            <div class="header-actions">
+                <button class="theme-toggle-btn" onclick="switchTheme()">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                    <span id="theme-text">Dark Mode</span>
+                </button>
+                <a class="cart-icon-container" href="cart.html" aria-label="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul><li><a href="index.html" class="nav-active" aria-current="page">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="profile.html">Profile</a></li><li><a href="cart.html">Cart</a></li></ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>Welcome to ShopHop</h2>
+                <p>Your one-stop shop for quality home appliances at amazing prices!</p>
+                <div class="hero-buttons">
+                    <a href="products.html" class="btn-primary">Shop Now</a>
+                    <a href="#featured" class="btn-secondary">View Deals</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-collage">
+                    <img src="images/fryer.jpeg" alt="Air fryer">
+                    <img src="images/refrigerator.jpeg" alt="Refrigerator">
+                    <img src="images/washer.jpeg" alt="Washing machine">
+                    <img src="images/vacuum.jpeg" alt="Vacuum cleaner">
+                </div>
+            </div>
+        </section>
+
+        <section class="categories-section">
+            <h2>Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="goToCategory('kitchen')"><i class="fas fa-blender"></i><h3>Kitchen</h3><p>Blenders, Fryers &amp; More</p></div>
+                <div class="category-card" onclick="goToCategory('cooling')"><i class="fas fa-snowflake"></i><h3>Cooling</h3><p>ACs &amp; Fans</p></div>
+                <div class="category-card" onclick="goToCategory('cleaning')"><i class="fas fa-broom"></i><h3>Cleaning</h3><p>Vacuums &amp; Washers</p></div>
+                <div class="category-card" onclick="goToCategory('entertainment')"><i class="fas fa-tv"></i><h3>Entertainment</h3><p>TVs &amp; Audio Systems</p></div>
+            </div>
+        </section>
+
+        <section class="featured-section" id="featured">
+            <h2>Featured Products</h2>
+            <div class="product-grid" id="featured-products"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ShopHop</h3>
+                <p>Your fast &amp; fun shopping destination for home appliances.</p>
+                <div class="social-icons">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="profile.html">My Account</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-envelope"></i> info@shophop.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShopHop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

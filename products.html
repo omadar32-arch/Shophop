@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - ShopHop</title>
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-theme">
+    <header>
+        <div class="header-top">
+            <div class="logo-container">
+                <a href="index.html" aria-label="ShopHop home"><img src="images/logo.png" alt="ShopHop" class="logo-img"></a>
+            </div>
+            <div class="header-actions">
+                <button class="theme-toggle-btn" onclick="switchTheme()">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                    <span id="theme-text">Dark Mode</span>
+                </button>
+                <a class="cart-icon-container" href="cart.html" aria-label="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul><li><a href="index.html">Home</a></li><li><a href="products.html" class="nav-active" aria-current="page">Products</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="profile.html">Profile</a></li><li><a href="cart.html">Cart</a></li></ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>All Products</h1>
+            <p>Browse our complete collection of home appliances</p>
+        </section>
+
+        <section class="filters-section">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="category-filter">Category:</label>
+                    <select id="category-filter" onchange="renderProducts()">
+                        <option value="all">All Categories</option>
+                        <option value="kitchen">Kitchen</option>
+                        <option value="cooling">Cooling</option>
+                        <option value="cleaning">Cleaning</option>
+                        <option value="entertainment">Entertainment</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="price-filter">Price Range:</label>
+                    <select id="price-filter" onchange="renderProducts()">
+                        <option value="all">All Prices</option>
+                        <option value="0-5000">Under EGP 5,000</option>
+                        <option value="5000-10000">EGP 5,000 - 10,000</option>
+                        <option value="10000-50000">EGP 10,000 - 50,000</option>
+                        <option value="50000+">Over EGP 50,000</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sort-filter">Sort By:</label>
+                    <select id="sort-filter" onchange="renderProducts()">
+                        <option value="name">Name</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-grid-section">
+            <div class="products-grid" id="products-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ShopHop</h3>
+                <p>Your fast &amp; fun shopping destination for home appliances.</p>
+                <div class="social-icons">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="profile.html">My Account</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-envelope"></i> info@shophop.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShopHop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - ShopHop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-theme">
+    <header>
+        <div class="header-top">
+            <div class="logo-container">
+                <a href="index.html"><img src="images/logo.png" alt="ShopHop" class="logo-img"></a>
+            </div>
+            <div class="header-actions">
+                <button class="theme-toggle-btn" onclick="switchTheme()">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                    <span id="theme-text">Dark Mode</span>
+                </button>
+                <div class="cart-icon-container">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.html" class="nav-active">Profile</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-container">
+            <div class="profile-sidebar">
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <div class="avatar-initials" aria-label="Profile avatar">O</div>
+                        <button class="avatar-edit-btn">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                    <div class="profile-info">
+                        <h2>Omar Al nomany</h2>
+                        <p>omar@shophop.com</p>
+                        <p>Member since: January 2026</p>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">24</span>
+                            <span class="stat-label">Orders</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Wishlist</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">620</span>
+                            <span class="stat-label">Points</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-menu">
+                    <button class="menu-btn active" onclick=\"showProfileSection('overview', this)\">
+                        <i class="fas fa-th-large"></i> Overview
+                    </button>
+                    <button class="menu-btn" onclick=\"showProfileSection('orders', this)\">
+                        <i class="fas fa-box"></i> My Orders
+                    </button>
+                    <button class="menu-btn" onclick=\"showProfileSection('wishlist', this)\">
+                        <i class="fas fa-heart"></i> Wishlist
+                    </button>
+                    <button class="menu-btn" onclick=\"showProfileSection('addresses', this)\">
+                        <i class="fas fa-map-marker-alt"></i> Addresses
+                    </button>
+                    <button class="menu-btn" onclick=\"showProfileSection('settings', this)\">
+                        <i class="fas fa-cog"></i> Settings
+                    </button>
+                    <button class="menu-btn logout-btn" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div id="overview-section" class="profile-section active">
+                    <h2>Account Overview</h2>
+                    
+                    <div class="overview-cards">
+                        <div class="overview-card">
+                            <div class="card-icon">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Recent Orders</h3>
+                                <p>You have 3 orders in the last 30 days</p>
+                                <button class="btn-secondary" onclick=\"showProfileSection('orders', this)\">View All Orders</button>
+                            </div>
+                        </div>
+
+                        <div class="overview-card">
+                            <div class="card-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Wishlist Items</h3>
+                                <p>8 items saved for later</p>
+                                <button class="btn-secondary" onclick=\"showProfileSection('wishlist', this)\">View Wishlist</button>
+                            </div>
+                        </div>
+
+                        <div class="overview-card">
+                            <div class="card-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Rewards Points</h3>
+                                <p>620 points available</p>
+                                <button class="btn-secondary">Redeem Points</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recent-activity">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>Order #12345 Delivered</h4>
+                                    <p>Professional Blender x1, Standing Fan x2</p>
+                                    <span class="activity-date">2 days ago</span>
+                                </div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>Added to Wishlist</h4>
+                                    <p>Air Fryer - EGP 44999</p>
+                                    <span class="activity-date">5 days ago</span>
+                                </div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>Product Review</h4>
+                                    <p>Rated 5 stars for Microwave Oven</p>
+                                    <span class="activity-date">1 week ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="orders-section" class="profile-section">
+                    <h2>My Orders</h2>
+                    
+                    <div class="orders-filter">
+                        <select id="order-filter" onchange="filterOrders()">
+                            <option value="all">All Orders</option>
+                            <option value="processing">Processing</option>
+                            <option value="shipped">Shipped</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="returned">Returned</option>
+                        </select>
+                    </div>
+
+                    <div class="orders-list">
+                        <div class="order-item">
+                            <div class="order-header">
+                                <div>
+                                    <h3>Order #12</h3>
+                                    <h3>EGP 3240</h3>
+                                    <p>Placed: March 15, 2024</p>
+                                </div>
+                                <div class="order-status delivered">
+                                    <i class="fas fa-check-circle"></i> Delivered
+                                </div>
+                            </div>
+                            <div class="order-items">
+                                <div class="order-item-product">
+                                    <img src="images/blender.jpeg" alt="Professional Blender">
+                                    <div>
+                                        <h4>Professional Blender</h4>
+                                        <p>Qty: 1 | EGP 8999</p>
+                                    </div>
+                                </div>
+                                <div class="order-item-product">
+                                    <img src="images/fan.jpeg" alt="Standing Fan">
+                                    <div>
+                                        <h4>Standing Fan</h4>
+                                        <p>Qty: 2 | EGP 11998</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-footer">
+                                <span class="order-total">Total: EGP 31196</span>
+                                <button class="btn-secondary">View Details</button>
+                                <button class="btn-primary">Reorder</button>
+                            </div>
+                        </div>
+
+                        <div class="order-item">
+                            <div class="order-header">
+                                <div>
+                                    <h3>Order #12344</h3>
+                                    <p>Placed: March 10, 2024</p>
+                                </div>
+                                <div class="order-status shipped">
+                                    <i class="fas fa-truck"></i> Shipped
+                                </div>
+                            </div>
+                            <div class="order-items">
+                                <div class="order-item-product">
+                                    <img src="images/dispenser.jpeg" alt="Water Dispenser">
+                                    <div>
+                                        <h4>Water Dispenser</h4>
+                                        <p>Qty: 1 | EGP 12999</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-footer">
+                                <span class="order-total">Total: EGP 12999</span>
+                                <button class="btn-secondary">Track Order</button>
+                                <button class="btn-primary">Reorder</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="wishlist-section" class="profile-section">
+                    <h2>My Wishlist</h2>
+                    
+                    <div class="wishlist-grid">
+                        <div class="wishlist-item">
+                            <img src="images/fryer.jpeg" alt="Air Fryer">
+                            <div class="wishlist-info">
+                                <h3>Air Fryer</h3>
+                                <p class="wishlist-price">EGP 44999</p>
+                                <div class="wishlist-actions">
+                                    <button class="btn-primary" onclick="addToCartFromWishlist(6)">Add to Cart</button>
+                                    <button class="btn-remove" onclick="removeFromWishlist(6)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wishlist-item">
+                            <img src="images/coffee.svg" alt="Coffee Maker">
+                            <div class="wishlist-info">
+                                <h3>Coffee Maker</h3>
+                                <p class="wishlist-price">EGP 34999</p>
+                                <div class="wishlist-actions">
+                                    <button class="btn-primary" onclick="addToCartFromWishlist(10)">Add to Cart</button>
+                                    <button class="btn-remove" onclick="removeFromWishlist(10)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wishlist-item">
+                            <img src="images/microwave.jpeg" alt="Microwave">
+                            <div class="wishlist-info">
+                                <h3>Microwave Oven</h3>
+                                <p class="wishlist-price">EGP 19999</p>
+                                <div class="wishlist-actions">
+                                    <button class="btn-primary" onclick="addToCartFromWishlist(4)">Add to Cart</button>
+                                    <button class="btn-remove" onclick="removeFromWishlist(4)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wishlist-item">
+                            <img src="images/vacuum.jpeg" alt="Vacuum Cleaner">
+                            <div class="wishlist-info">
+                                <h3>Vacuum Cleaner</h3>
+                                <p class="wishlist-price">EGP 29999</p>
+                                <div class="wishlist-actions">
+                                    <button class="btn-primary" onclick="addToCartFromWishlist(5)">Add to Cart</button>
+                                    <button class="btn-remove" onclick="removeFromWishlist(5)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="addresses-section" class="profile-section">
+                    <h2>Saved Addresses</h2>
+                    
+                    <div class="addresses-grid">
+                        <div class="address-card default">
+                            <div class="address-header">
+                                <h3>Home Address</h3>
+                                <span class="default-badge">Default</span>
+                            </div>
+                            <div class="address-details">
+                                <p><strong>Omar Al nomany</strong></p>
+                                <p>01111111111</p>
+                            </div>
+                            <div class="address-actions">
+                                <button class="btn-secondary">Edit</button>
+                                <button class="btn-remove">Remove</button>
+                            </div>
+                        </div>
+
+                        <div class="address-card">
+                            <div class="address-header">
+                                <h3>Work Address</h3>
+                            </div>
+                            <div class="address-details">
+                                <p><strong>Omar Al nomany</strong></p>
+                                <p>01111111111</p>
+                            </div>
+                            <div class="address-actions">
+                                <button class="btn-secondary">Edit</button>
+                                <button class="btn-remove">Remove</button>
+                            </div>
+                        </div>
+
+                        <div class="add-address-card" onclick="showAddAddressForm()">
+                            <div class="add-address-content">
+                                <i class="fas fa-plus"></i>
+                                <h3>Add New Address</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="settings-section" class="profile-section">
+                    <h2>Account Settings</h2>
+                    
+                    <div class="settings-form">
+                        <form onsubmit="updateSettings(event)">
+                            <div class="form-section">
+                                <h3>Personal Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="first-name-setting">First Name</label>
+                                        <input type="text" id="first-name-setting" value="Omar">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last-name-setting">Last Name</label>
+                                        <input type="text" id="last-name-setting" value="Al nomany">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email-setting">Email Address</label>
+                                    <input type="email" id="email-setting" value="omar@shophop.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone-setting">Phone Number</label>
+                                    <input type="tel" id="phone-setting" value="01111111111">
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Preferences</h3>
+                                <div class="form-group">
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="newsletter-setting" checked>
+                                        <label for="newsletter-setting">Subscribe to newsletter</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="promotions-setting" checked>
+                                        <label for="promotions-setting">Receive promotional offers</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="sms-setting">
+                                        <label for="sms-setting">SMS notifications</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Security</h3>
+                                <div class="form-group">
+                                    <button type="button" class="btn-secondary" onclick="showChangePassword()">
+                                        <i class="fas fa-key"></i> Change Password
+                                    </button>
+                                </div>
+                                <div class="form-group">
+                                    <button type="button" class="btn-secondary" onclick="enableTwoFactor()">
+                                        <i class="fas fa-shield-alt"></i> Enable Two-Factor Authentication
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">
+                                    <i class="fas fa-save"></i> Save Changes
+                                </button>
+                                <button type="button" class="btn-secondary" onclick="cancelSettings()">
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShopHop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

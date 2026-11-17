@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - ShopHop</title>
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-theme">
+    <header>
+        <div class="header-top">
+            <div class="logo-container">
+                <a href="index.html" aria-label="ShopHop home"><img src="images/logo.png" alt="ShopHop" class="logo-img"></a>
+            </div>
+            <div class="header-actions">
+                <button class="theme-toggle-btn" onclick="switchTheme()">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                    <span id="theme-text">Dark Mode</span>
+                </button>
+                <a class="cart-icon-container" href="cart.html" aria-label="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul><li><a href="index.html">Home</a></li><li><a href="products.html" class="nav-active" aria-current="page">Products</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="profile.html">Profile</a></li><li><a href="cart.html">Cart</a></li></ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-detail-section" id="product-detail-root">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> /
+                <a href="products.html">Products</a> /
+                <span id="breadcrumb-product">Product Details</span>
+            </div>
+
+            <div class="product-detail-container">
+                <div class="product-images">
+                    <div class="main-image">
+                        <img id="main-product-image" src="images/logo.png" alt="Product image">
+                    </div>
+                    <div class="thumbnail-images" id="thumbnail-images"></div>
+                </div>
+
+                <div class="product-info">
+                    <h1 id="product-name">Loading...</h1>
+                    <div class="product-rating" id="product-rating"></div>
+                    <div class="price-section">
+                        <span class="current-price" id="product-price"></span>
+                        <p class="total-line" id="product-total"></p>
+                    </div>
+                    <p class="product-description" id="product-description"></p>
+
+                    <div class="product-features">
+                        <h3>Key Features:</h3>
+                        <ul id="product-features"></ul>
+                    </div>
+
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" id="quantity" value="1" min="1" max="10" onchange="updatePrice()" oninput="updatePrice()">
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="btn-primary btn-large" onclick="addToCartFromDetail()"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="btn-secondary btn-large" onclick="buyNow()"><i class="fas fa-bolt"></i> Buy Now</button>
+                        <button class="btn-wishlist" onclick="addCurrentToWishlist()" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+
+                    <div class="product-meta">
+                        <div class="meta-item"><i class="fas fa-truck"></i><span>Fast delivery</span></div>
+                        <div class="meta-item"><i class="fas fa-shield-alt"></i><span>Warranty included</span></div>
+                        <div class="meta-item"><i class="fas fa-undo"></i><span>Easy returns</span></div>
+                        <div class="meta-item"><i class="fas fa-check-circle"></i><span>In stock</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-tabs">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="showTab('description', this)">Description</button>
+                <button class="tab-btn" onclick="showTab('specifications', this)">Specifications</button>
+                <button class="tab-btn" onclick="showTab('shipping', this)">Shipping &amp; Returns</button>
+            </div>
+            <div class="tab-content">
+                <div id="description-tab" class="tab-pane active">
+                    <p id="spec-summary"></p>
+                </div>
+                <div id="specifications-tab" class="tab-pane">
+                    <table class="specs-table">
+                        <tr><th>Product</th><td id="spec-name"></td></tr>
+                        <tr><th>Category</th><td id="spec-category"></td></tr>
+                    </table>
+                </div>
+                <div id="shipping-tab" class="tab-pane">
+                    <p>Free shipping on orders from EGP 5,000. Smaller orders ship for a flat EGP 100 fee. You can return unused items in their original packaging.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-products">
+            <h2>You May Also Like</h2>
+            <div class="related-grid product-grid" id="related-products"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ShopHop</h3>
+                <p>Your fast &amp; fun shopping destination for home appliances.</p>
+                <div class="social-icons">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="profile.html">My Account</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-envelope"></i> info@shophop.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShopHop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
